@@ -1,0 +1,130 @@
+@layer reset, base, layout, components, utilities;
+
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    figure,
+    blockquote,
+    dl,
+    dd {
+        margin: 0;
+    }
+
+    body {
+        min-block-size: 100vh;
+        line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    button,
+    input,
+    label {
+        line-height: 1.1;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-wrap: balance;
+    }
+
+    p,
+    li {
+        text-wrap: pretty;
+    }
+
+    img,
+    picture {
+        max-inline-size: 100%;
+        display: block;
+    }
+}
+
+@layer base {
+    :root {
+        /*PRIMITIVES*/
+        --slate-900: #1f314f;
+        --slate-500: #68778D;
+        --slate-300: #d5e1ef;
+        --white: #ffffff;
+
+        --font-family: "Outfit", sans-serif;
+
+        /*CUSTOM PROPERTIES*/
+        --spacing-sm: 16px;
+        --spacing-md: 24px;
+        --spacing-lg: 40px;
+        --border-radius-sm: 10px;
+        --border-radius-md: 20px;
+    }
+}
+
+@layer layout {
+    body {
+        background-color: var(--slate-300);
+        display: grid;
+        place-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .container {
+        width: 320px;
+        height: 499px;
+        border-radius: var(--border-radius-md);
+        background-color: var(--white);
+        box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.0477);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 288px 131px;
+        padding: 16px 16px 40px;
+        gap: 24px;
+        text-align: center;
+    }
+}
+
+@layer components {
+    .image img {
+        border-radius: var(--border-radius-sm);
+    }
+
+    .text {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .text p {
+        color: var(--slate-500);
+    }
+}
+
+@layer utilities {
+    .text-preset-bold {
+        font-family: var(--font-family), sans-serif;
+        font-size: 22px;
+        line-height: 120%;
+        font-weight: 700;
+    }
+
+    .text-preset-regular {
+        font-family: var(--font-family), sans-serif;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+    }
+}
